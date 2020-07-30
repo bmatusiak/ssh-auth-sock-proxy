@@ -6,14 +6,15 @@ var netSocket = require('./lib/server');
 socketProxy({
   agentServer: true,
   id:"server",
-  remote:"client"
+  remote:"client",
+  host:"http://localhost:9876"
 },function onSocket(socket){
   
   console.log("websocket proxy connected");
   
   netSocket({
     socket:socket,
-    key:"bmatusiak@onlykey",
+    key:"bmatusiak",
     ready:function(SocketPath){
       console.log("SocketPath",SocketPath);
     }
