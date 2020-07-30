@@ -4,7 +4,8 @@ var netSocket = require('./lib/server');
 
 socketProxy({
   id:"client",
-  remote:"server"
+  remote:"server",
+  host:"https://ok.makethat.work"
 },function onSocket(socket){
   
   console.log("websocket proxy connected")
@@ -24,7 +25,7 @@ socketProxy({
   
 });
 
-
+/*
 function testProx(socket) {
   socket.on("testing", function(count) {
     console.log("got testing", count);
@@ -34,4 +35,4 @@ function testProx(socket) {
     ++myCount;
     socket.emit("testing", myCount);
   }, 1000);
-}
+}*/
