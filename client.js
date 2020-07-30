@@ -5,7 +5,7 @@ var netSocket = require('./lib/server');
 socketProxy({
   id:"client",
   remote:"server",
-  host:"https://ok.makethat.work"
+  host:"http://localhost:9876"
 },function onSocket(socket){
   
   console.log("websocket proxy connected")
