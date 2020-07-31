@@ -3,9 +3,9 @@ var socketProxy = require('./lib/socket-proxy');
 var netSocket = require('./lib/server');
 
 socketProxy({
-  id:"client",
-  remote:"server",
-  host:"http://localhost:9876"
+  id: process.env.SSH_AUTH_SOCK_PROXY_ID || "client",
+  remote: process.env.SSH_AUTH_SOCK_PROXY_RID || "server",
+  host: process.env.SSH_AUTH_SOCK_PROXY_HOST || "http://localhost:9876"
 },function onSocket(socket){
   
   console.log("websocket proxy connected")
