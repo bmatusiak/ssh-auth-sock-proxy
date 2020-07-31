@@ -2,7 +2,7 @@
 
 This is a proxy for `onlykey-agent` _or to proxy local ssh-agent thats running_
 
-With this, You can achieve access to `onlykey-agent` running on a `raspberry pi` (_or local linux machine_) from a remote cloud server to proxy the tcp unix file socket request , Using websockets on a web-server(that can be locaed anywhere)
+With this, You can achieve access to `onlykey-agent` running on a `raspberry pi` (_or local linux machine_) from a remote cloud server to proxy the tcp unix file socket request , Using websockets on a remote web-server(that can be located anywhere as long both `server/client.js` can connect to it)
 
 How? I simply setup this proxy by creating a $SSH_AUTH_SOCK path with tcp unix file sockets.
 
