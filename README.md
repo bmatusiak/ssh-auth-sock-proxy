@@ -56,3 +56,10 @@ notes..
 
 todo..   
 * provide simple bash scripts to help setup everything 
+
+
+
+```
+$(./bin/onlykey-agent-proxy)
+echo $SSH_AGENT_PID $SSH_AUTH_SOCK
+```

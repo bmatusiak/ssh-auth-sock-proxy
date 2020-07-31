@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+ // -*- mode: js -*-
+
+var argv = require('optimist')
+  .default('server', true)
+  .default('web', false)
+  .default('client', false)
+  .default('rc', false)
+  .argv;
+
+if (argv.web || argv.client)
+  argv.server = false;
+
+
+
+if (!argv.rc) {
+
+  var rc = require('../lib/run_child');
+  
+  var p = rc(["node",__filename, "--rc"]);
+  
+  
+  p.stderr.on('data', (data) => {
+    console.error(data.toString());
+  });
+  p.stdout.on('data', (data) => {
+      var sTring = data.toString().split("\n")[0];
+    
+      if(sTring.split(".")[sTring.split(".").length-1] == "sock"){
+        /*
+        SSH_AUTH_SOCK=/tmp/ssh-qbi7jAIRbjAA/agent.24634; export SSH_AUTH_SOCK;
+        SSH_AGENT_PID=24635; export SSH_AGENT_PID;
+        echo Agent pid 24635;
+        */
+        console.log("export SSH_AUTH_SOCK="+sTring+"");
+        console.log("export SSH_AGENT_PID="+p.pid.toString()+"");
+        // console.log('echo Agent pid $SSH_AGENT_PID');
+        p.unref()
+        process.exit();
+      }
+  });
+
+}
+else {
+  var socketProxy = require('../lib/socket-proxy');
+  var netSocket = require('../lib/server');
+
+  socketProxy({
+    agentServer: true,
+    id: process.env.SSH_AUTH_SOCK_PROXY_ID || "server",
+    remote: process.env.SSH_AUTH_SOCK_PROXY_RID || "client",
+    host: process.env.SSH_AUTH_SOCK_PROXY_HOST || "http://localhost:9876"
+  }, function onSocket(socket) {
+
+    // console.log("websocket proxy connected");
+
+    netSocket({
+      socket: socket,
+      key: "bmatusiak",
+      ready: function(SocketPath) {
+        console.log(SocketPath);
+        // process.disconnect();
+      }
+    });
+
+
+  });
+
+
+}
