@@ -54,10 +54,6 @@ notes..
 * remote `"proxy-agent"` currently keeps the tcp SSH_AUTH_SOCK open
 * encryptioned transport, uses nacl for shared secrets and AESGCM for encrypted data
 
-todo..   
-* provide simple bash scripts to help setup everything 
-
-
 
 ```
 $(./bin/onlykey-agent-proxy)
