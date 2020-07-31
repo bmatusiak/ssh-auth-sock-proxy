@@ -1,6 +1,6 @@
 # ssh-auth-sock-proxy
 
-This is a proxy for onlykey-agent
+This is a proxy for `onlykey-agent` _or to proxy local ssh-agent thats running_
 
 With this, You can achieve access to `onlykey-agent` on a `raspberry pi` from a remote cloud server to proxy the request, Using websockets on a web-server(that can be locaed anywhere)
 
