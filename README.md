@@ -55,6 +55,7 @@ notes..
 * encryptioned transport, uses nacl for shared secrets and AESGCM for encrypted data
 
 
+this below will help setup 
 ```
 $(./bin/onlykey-agent-proxy)
 echo $SSH_AGENT_PID $SSH_AUTH_SOCK
