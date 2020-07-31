@@ -4,11 +4,13 @@ This is a proxy for `onlykey-agent` _or to proxy local ssh-agent thats running_
 
 With this, You can achieve access to `onlykey-agent` running on a `raspberry pi` (_or local linux machine_) from a remote cloud server to proxy the tcp unix file socket request , Using websockets on a web-server(that can be locaed anywhere)
 
+How? I simply setup this proxy by creating a $SSH_AUTH_SOCK path with tcp unix file sockets.
+
 `index.js` is the `web-server` entry script
 
 `server.js`  is the `onlykey-agent/raspberry pi` entry script
 
-`client.js`  is the `cloud server` entry script
+`client.js`  is the `cloud9 server` entry script
 
 Works on AWS cloud9, Here is how.
 
@@ -36,9 +38,20 @@ location /ssh-agent-proxy {
 }
 ```
 
+in cloud9,  you need to see what the `client.js` entry script spits out,
+
+then you can run bash with the env variable `SSH_AUTH_SOCK`
+
+```
+SSH_AUTH_SOCK=/tmp/my-ssh-agent.path-to-agent.sock bash
+```
+
 
 dont forget to the the server/client IDS to match each other..
 
+notes..
+* onlykey-agent only runs when needed, and closes on tcp hangup (like it normmaly would)
+* remote `"proxy-agent"` currently keeps the tcp SSH_AUTH_SOCK open
 
 todo..   
 * add encryptioned transport
