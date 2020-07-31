@@ -52,7 +52,7 @@ dont forget to set the server/client IDS to match each other..
 notes..
 * onlykey-agent only runs when needed, and closes on tcp hangup (like it normmaly would)
 * remote `"proxy-agent"` currently keeps the tcp SSH_AUTH_SOCK open
+* encryptioned transport, uses nacl for shared secrets and AESGCM for encrypted data
 
 todo..   
-* add encryptioned transport
 * provide simple bash scripts to help setup everything 
