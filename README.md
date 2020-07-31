@@ -47,7 +47,7 @@ SSH_AUTH_SOCK=/tmp/my-ssh-agent.path-to-agent.sock bash
 ```
 
 
-dont forget to the the server/client IDS to match each other..
+dont forget to set the server/client IDS to match each other..
 
 notes..
 * onlykey-agent only runs when needed, and closes on tcp hangup (like it normmaly would)
