@@ -55,4 +55,4 @@ notes..
 
 todo..   
 * add encryptioned transport
-
+* provide simple bash scripts to help setup everything 
