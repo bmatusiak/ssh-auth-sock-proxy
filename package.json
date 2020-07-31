@@ -1,0 +1,29 @@
+{
+  "name": "ssh-auth-sock-proxy",
+  "version": "1.0.0",
+  "description": "This is a proxy for `onlykey-agent` _or to proxy local ssh-agent thats running_",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmatusiak/ssh-auth-sock-proxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmatusiak/ssh-auth-sock-proxy/issues"
+  },
+  "homepage": "https://github.com/bmatusiak/ssh-auth-sock-proxy#readme"
+}
