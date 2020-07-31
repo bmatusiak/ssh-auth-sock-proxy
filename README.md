@@ -8,9 +8,9 @@ How? I simply setup this proxy by creating a $SSH_AUTH_SOCK path with tcp unix f
 
 `index.js` is the `web-server` entry script
 
-`server.js`  is the `onlykey-agent/raspberry pi` entry script
+`client.js`  is the `onlykey-agent/raspberry pi` entry script
 
-`client.js`  is the `cloud9 server` entry script
+`server.js`  is the `cloud9 server` entry script
 
 Works on AWS cloud9, Here is how.
 
