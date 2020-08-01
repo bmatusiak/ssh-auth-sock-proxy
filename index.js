@@ -42,13 +42,13 @@ io.on('connection', function(socket) {
           c.on(connect_id, function(data) {
             var args = Array.from(arguments);
             args.unshift(connect_id);
-            console.log(args);
+            // console.log(args);
             socket.emit.apply(socket, args);
           });
           socket.on(connect_id, function(data) {
             var args = Array.from(arguments);
             args.unshift(connect_id);
-            console.log(args);
+            // console.log(args);
             c.emit.apply(c, args);
           });
           c.on("disconnect", function() {
