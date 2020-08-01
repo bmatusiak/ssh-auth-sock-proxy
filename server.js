@@ -14,7 +14,7 @@ socketProxy({
 
   netSocket({
     socket: socket,
-    key: "bmatusiak",
+    key: process.env.SSH_AUTH_KEY_NAME || "onlykey",
     ready: function(SocketPath) {
 
 
@@ -35,6 +35,8 @@ socketProxy({
         ok_ssh_pub_key.comment;
 
         console.log("------------------------\n");
+        
+        console.log("To change key name, respectively set $SSH_AUTH_KEY_NAME env variable and restart proxy agent\n");
         
         console.log("Your Pub SSH Key");
         console.log(sshStr + "\n");
