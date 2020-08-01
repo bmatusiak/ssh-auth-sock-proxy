@@ -21,9 +21,8 @@ socketProxy({
         
         console.log("you can now add this before you run a program");
         console.log("SSH_AUTH_SOCK="+SocketPath+" $PROGRAM\n");
+        
         console.log("you can now add this in a terminal");
-        console.log("set SSH_AUTH_SOCK="+SocketPath+"\n");
-        console.log("you can now add this in a bash script");
         console.log("export SSH_AUTH_SOCK="+SocketPath+"\n");
         
         console.log("------------------------\n");
