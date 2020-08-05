@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http, {path: '/ssh-agent-proxy/socket.io'});
-var port = 9876;
+var port = process.env.PORT || 9876;
 
 console.log("starting web-server");
 
