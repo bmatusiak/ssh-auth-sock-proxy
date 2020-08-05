@@ -2,8 +2,6 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http, {path: '/ssh-agent-proxy/socket.io'});
 var port = 9876;
-var p2p = require('socket.io-p2p-server').Server;
-io.use(p2p);
 
 console.log("starting web-server");
 
